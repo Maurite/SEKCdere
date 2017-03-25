@@ -32,7 +32,7 @@ new Bullet,Blood,Cameraing[MAX_PLAYERS],Player_Damaged = INVALID_PLAYER_ID;
 
 public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 {
-	if(issuerid != INVALID_PLAYER_ID && weaponid == 38 && bodypart == 9)
+	if(issuerid != INVALID_PLAYER_ID && weaponid == 34 && bodypart == 9)
 	{
 		new Float:x,Float:y,Float:z,Float:x1,Float:y1,Float:z1;
 		GetPlayerPos(playerid,x1,y1,z1);
