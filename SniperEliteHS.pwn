@@ -38,7 +38,7 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 		GetPlayerPos(playerid,x1,y1,z1);
 		GetPlayerPos(issuerid,x,y,z);
 		Player_Damaged = playerid;
-		Bullet = CreateObject(3106,x,y,z,0.0,0.0,0.0);
+		if(!IsValidObject(Bullet)) Bullet = CreateObject(3106,x,y,z,0.0,0.0,0.0);
 		
 		#if ALL_PLAYERS_HS == 1
 			for(new i = 0,j = GetPlayerPoolSize(); i <= j; i++)
@@ -49,6 +49,7 @@ public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)
 				AttachCameraToObject(i,Bullet);
 			}
 		#elseif ALL_PLAYERS_HS == 0
+			if(Cameraing[playerid] == 1 || Cameraing[issuerid] == 1) return 1;
 			TogglePlayerControllable(playerid,0);
 			TogglePlayerControllable(issuerid,0);
 			AttachCameraToObject(playerid,Bullet);
@@ -82,7 +83,7 @@ public OnObjectMoved(objectid)
 			Player_Damaged = INVALID_PLAYER_ID;
 		}
 		
-		Blood = CreateObject(18668,x,y,z,0.0,0.0,0.0);
+		if(!IsValidObject(Blood)) Blood = CreateObject(18668,x,y,z,0.0,0.0,0.0);
 		MoveObject(Blood,x,y,z-0.9,1);
 	}
 	
