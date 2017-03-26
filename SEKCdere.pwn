@@ -30,6 +30,10 @@
 	#define IsValidObject IsValidDynamicObject
 #endif
 
+forward KillCamMinus(playerid,targetid);
+forward KillCam(playerid,targetid);
+forward KillCamPlus(playerid,targetid);
+
 new Bullet[MAX_PLAYERS],Cameraing[MAX_PLAYERS],Float:Pos[MAX_PLAYERS][3];
 
 
@@ -105,7 +109,6 @@ public OnPlayerGiveDamage(playerid, damagedid, Float:amount, weaponid, bodypart)
 	return 1;
 }
 
-forward KillCamMinus(playerid,targetid);
 public KillCamMinus(playerid,targetid)
 {
 	new Float:x,Float:y,Float:z;
@@ -117,14 +120,12 @@ public KillCamMinus(playerid,targetid)
 	return 1;
 }
 
-forward KillCam(playerid,targetid);
 public KillCam(playerid,targetid)
 {
 	MoveObject(Bullet[targetid],Pos[targetid][0],Pos[targetid][1],Pos[targetid][2]+0.5,50);
 	return 1;
 }
 
-forward KillCamPlus(playerid,targetid);
 public KillCamPlus(playerid,targetid)
 {
 	if(IsValidObject(Bullet[targetid])) DestroyObject(Bullet[targetid]);
