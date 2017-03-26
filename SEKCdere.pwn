@@ -14,7 +14,7 @@
 
 #define ALL_PLAYERS_KC 0
 #define RANGE_KC 150
-#define USE_STREAMER 1
+#define USE_STREAMER 0
 
 // ----- Definitions and such ------
 
