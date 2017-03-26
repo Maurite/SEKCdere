@@ -21,6 +21,8 @@ Although their names can give you a hint, i'll explain what each one of these se
 
 `USE_STREAMER` Define if you want to use Icognito's Streamer for the object creation (1 object per event) or use the default SA-MP natives. Default is 0, which means the Streamer is not in use. Set this value to 1 if you want to use the streamer functions.
 
+----------------------------------------------
+
 **[ESPAÑOL]**
 
 **¿Cómo usar?**
