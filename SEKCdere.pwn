@@ -87,16 +87,16 @@ public OnPlayerGiveDamage(playerid, damagedid, Float:amount, weaponid, bodypart)
 				if(!IsPlayerConnected(i) || Cameraing[i] != -1 || !IsPlayerInRangeOfPoint(i,RANGE_KC,x,y,z)) continue;
 				Cameraing[i] = damagedid;
 				TogglePlayerControllable(i,0);
-				SetPlayerCameraPos(i,x,y,z+10);
-				SetPlayerCameraLookAt(i,x,y,z-10);
+				SetPlayerCameraPos(i,x -5 + rand(11),y -5 + rand(11),z+6);
+				SetPlayerCameraLookAt(i,x,y,z);
 				SetTimerEx("KillCamMinus",500,false,"ii",i,damagedid);
 			}
 		#elseif ALL_PLAYERS_KC == 0
 			if(Cameraing[damagedid] != -1 || Cameraing[playerid] != -1) return 1;
-			SetPlayerCameraPos(playerid,x,y,z+10);
-			SetPlayerCameraLookAt(playerid,x,y,z-10);
-			SetPlayerCameraPos(damagedid,x,y,z+10);
-			SetPlayerCameraLookAt(damagedid,x,y,z-10);				
+			SetPlayerCameraPos(playerid,x -5 + rand(11),y -5 + rand(11),z+6);
+			SetPlayerCameraLookAt(playerid,x,y,z);
+			SetPlayerCameraPos(damagedid,x -5 + rand(11),y -5 + rand(11),z+6);
+			SetPlayerCameraLookAt(damagedid,x,y,z);				
 			TogglePlayerControllable(damagedid,0);
 			TogglePlayerControllable(playerid,0);
 			SetTimerEx("KillCamMinus",500,false,"ii",playerid,damagedid);
