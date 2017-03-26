@@ -67,7 +67,7 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
 
 public OnPlayerGiveDamage(playerid, damagedid, Float:amount, weaponid, bodypart)
 {
-	if(playerid != INVALID_PLAYER_ID && weaponid == 34 && bodypart == 9)
+	if(damagedid != INVALID_PLAYER_ID && weaponid == 34 && bodypart == 9)
 	{
 		new Float:x,Float:y,Float:z;
 		GetPlayerPos(damagedid,Pos[damagedid][0],Pos[damagedid][1],Pos[damagedid][2]);
