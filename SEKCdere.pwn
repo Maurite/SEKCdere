@@ -120,7 +120,7 @@ public KillCamMinus(playerid,targetid)
 forward KillCam(playerid,targetid);
 public KillCam(playerid,targetid)
 {
-	MoveObject(Bullet[targetid],Pos[targetid][0],Pos[targetid][1],Pos[targetid][2],50);
+	MoveObject(Bullet[targetid],Pos[targetid][0],Pos[targetid][1],Pos[targetid][2]+0.5,50);
 	return 1;
 }
 
