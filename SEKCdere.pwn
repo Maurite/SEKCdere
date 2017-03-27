@@ -57,7 +57,7 @@ public OnFilterScriptExit()
 	return 1;
 }
 
-public OnPlayerConnect(playerid)
+public OnPlayerSpawn(playerid)
 {
 	Cameraing[playerid] = -1;
 	return 1;
